@@ -68,7 +68,7 @@ const productsList = [
  *  - em cada elemento, adicionar a uma variavel, que contem todo o html
  *  - no final, essa variavel, injecta no productsDivElement;
  */
-let html = "";
+let html = [];
 
 function cardClick(index) {
   // percorrer a lista de children, e remover a class active
@@ -89,7 +89,9 @@ for (let index = 0; index < productsList.length; index++) {
   const element = productsList[index];
   // const cardActive = index === 1 ? "active" : "";
 
-  html += `<div onclick="cardClick(${index})" class="card">
+  // push é apenas para variáveis do tipo array, 
+  // sendo que a variável tem de começar com um array vazio (ex: html = [])
+  html.push(`<div onclick="cardClick(${index})" class="card">
     <img class="card-image" src="${element.image}">
     <div class="card-content">
       <span class="card-subtitle">${element.subtitle}</span>
@@ -97,7 +99,17 @@ for (let index = 0; index < productsList.length; index++) {
       <p class="card-text">${element.text}</p>
     </div>
     <a class="card-button" href="${element.buttonLink}">${element.buttonText}</a>
-  </div>`
+  </div>`)
+
+  // html += `<div onclick="cardClick(${index})" class="card">
+  //   <img class="card-image" src="${element.image}">
+  //   <div class="card-content">
+  //     <span class="card-subtitle">${element.subtitle}</span>
+  //     <h2 class="card-title">${element.title}</h2>
+  //     <p class="card-text">${element.text}</p>
+  //   </div>
+  //   <a class="card-button" href="${element.buttonLink}">${element.buttonText}</a>
+  // </div>`
 }
 
 productsDivElement.innerHTML = html;
