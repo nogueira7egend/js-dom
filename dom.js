@@ -91,7 +91,7 @@ for (let index = 0; index < productsList.length; index++) {
 
   // push é apenas para variáveis do tipo array, 
   // sendo que a variável tem de começar com um array vazio (ex: html = [])
-  html.push(`<div onclick="cardClick(${index})" class="card">
+  html += `<div onclick="cardClick(${index})" class="card">
     <img class="card-image" src="${element.image}">
     <div class="card-content">
       <span class="card-subtitle">${element.subtitle}</span>
@@ -99,7 +99,7 @@ for (let index = 0; index < productsList.length; index++) {
       <p class="card-text">${element.text}</p>
     </div>
     <a class="card-button" href="${element.buttonLink}">${element.buttonText}</a>
-  </div>`)
+  </div>`
 
   // html += `<div onclick="cardClick(${index})" class="card">
   //   <img class="card-image" src="${element.image}">
@@ -115,7 +115,7 @@ for (let index = 0; index < productsList.length; index++) {
 productsDivElement.innerHTML = html;
 
 // if normal
-// if (chuva === true) { 
+// if (chuva === true) {
   // usar guarda chuva
 // } else (senao) {
   // deixar o guarda chuva em casa.
