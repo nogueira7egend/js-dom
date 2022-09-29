@@ -112,6 +112,9 @@ for (let index = 0; index < productsList.length; index++) {
   // </div>`
 }
 
+//html += é uma string
+//html.push () array (faz virgulas em casa 'produto')
+
 productsDivElement.innerHTML = html;
 
 // if normal
